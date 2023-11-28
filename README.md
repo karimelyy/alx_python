@@ -1,1 +1,1 @@
-# alx_python
+learning python for the first time as an ALX student
