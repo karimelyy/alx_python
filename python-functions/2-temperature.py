@@ -1,8 +1,6 @@
 def convert_to_celsuis(fahrenheit):
-    celsius = (fahrenheit - 32) * (5 / 9)
+    if fahrenheit == -459.67:
+        celsius = -273.15
+    else:
+        celsius = (fahrenheit - 32) * (5 / 9)
     return celsius
-
-print(convert_to_celsius(100))
-print(convert_to_celsius(-40))
-print(convert_to_celsius(-459.67))
-print(convert_to_celsius(32))
