@@ -7,6 +7,3 @@ def print_matrix_integer(matrix=[[]]):
                 print("{:d}".format(num), end=" ")
     if not matrix:
         print()
-
-print_matrix_integer(matrix)
-print_matrix_integer([]) #empty matrix
