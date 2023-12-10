@@ -1,3 +1,6 @@
+"""
+Module for defining the square class
+"""
 class Square:
       """
     Square class defines a square by:
