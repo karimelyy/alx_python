@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Module for defining the square class
 """
