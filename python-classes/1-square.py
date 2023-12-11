@@ -1,15 +1,11 @@
-"""
-define a square class
-"""
+"""Define a square class"""
 class Square:
-    """
-    represent a square
+    """Represent a square.
     Attributes:
-        __size (int): the size of the square
+        __size (int): the size of the square.
     """
     def __init__(self, size):
-        """
-        initializes a new square instance
+        """Initializes a new square instance.
         Args:
             size (int): the size of the square Default to 0
         """
