@@ -10,7 +10,10 @@ class Square:
             size (int): the size of the square Default to 0
         """
         self.__size = size
-
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
     @property
     def size(self):
         """Getter method for size attribute
@@ -18,6 +21,7 @@ class Square:
             int: the size of the square
         """
         return self.__size
+    @size.setter
     def size(self, value):
         """Setter method for the size attribute
         Args:
