@@ -10,6 +10,8 @@ class Square:
             size (int): the size of the square Default to 0
         """
         self.__size = size
+
+    @property
     def size(self):
         """Getter method for size attribute
         Returns:
