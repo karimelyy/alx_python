@@ -16,15 +16,18 @@ class BaseGeometry:
             - None
         """
         pass
-    def __init_subclass__(cls):
+    def __init__(self):
         """
-        Placeholder for subclasses to extebd or override
-        Args:
-            - cls: the subclass being created
-        returns:
-            - none
+        Initialize a new instance of BaseGeometry.
+
+        Parameters:
+        - None
+
+        Returns:
+        - None
         """
         pass
+
     def __dir__(self):
         """
         Override __dir__ to exclude __init_subclass__ from the output.
@@ -32,4 +35,4 @@ class BaseGeometry:
         Returns:
         - List of attributes and methods.
         """
-        return [attr for attr in dir(type(self)) if attr != '__init_subclass__']
+        return [attr for attr in dir(self.__class__) if attr != '__init_subclass__']
