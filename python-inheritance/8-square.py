@@ -92,32 +92,46 @@ Classes:
 class Square(Rectangle):
     """
     Square class that inherits from Rectangle.
+
     Methods:
-        - __init__(self, size): Constructor for initializing instances of Square.
+    - __init__(self, size): Constructor for initializing instances of Square.
+
     Attributes:
-        - __size (int): Private attribute for the size of the square.
+    - __size (int): Private attribute for the size of the square.
+
     Public Methods:
-        - area(self): Calculates and returns the area of the square.
+    - area(self): Calculates and returns the area of the square.
+
     Overrides:
-        - __str__(self): Overrides the __str__ method to provide a formatted string representation.
+    - __str__(self): Overrides the __str__ method to provide a formatted string representation.
+
     """
+
     def __init__(self, size):
         """
         Constructor for the Square class.
+
         Parameters:
             - size (int): The size of the square.
+
+        Raises:
+            - TypeError: If size is not an integer.
+
         Returns:
             - None
         """
-        super().__init__(size, size)
+        super().__init__(size, size)  # Call the constructor of the parent class (Rectangle)
+
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
+
         self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
         """
         Public instance method to calculate the area of the square.
+
         Returns:
             - int: The area of the square.
         """
@@ -126,6 +140,7 @@ class Square(Rectangle):
     def __str__(self):
         """
         Override the __str__ method to provide a formatted string representation.
+
         Returns:
             - str: The string representation of the square.
         """
