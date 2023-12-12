@@ -1,9 +1,9 @@
 """Define an empty class BaseGeometry"""
 class baseGeometry:
     """The BaseGeometry class is the base class for geometry-related classes.
-     Attributes:
+    Attributes:
         - No attributes are defined in this base class.
-     Methods:
+    Methods:
         - No methods are defined in this base class.
     """
     pass
