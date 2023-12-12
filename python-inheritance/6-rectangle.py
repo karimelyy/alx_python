@@ -60,6 +60,16 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+
+    def area(self):
+        """
+        Public instance method to calculate the area of the rectangle.
+
+        Returns:
+            - int: The area of the rectangle.
+        """
+        return self.__width * self.__height
+    
     def __dir__(self):
         """
         Override __dir__ to provide a consistent order of elements.
