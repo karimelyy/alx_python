@@ -25,3 +25,20 @@ class BaseGeometry:
             - none
         """
         pass
+    def area(self):
+        """
+        Calculate the area.
+
+        Returns:
+        - None (not implemented in the base class).
+        """
+        pass
+
+    def perimeter(self):
+        """
+        Calculate the perimeter.
+
+        Returns:
+        - None (not implemented in the base class).
+        """
+        pass
