@@ -12,13 +12,11 @@ class BaseGeometry:
     """
     def __init__(self):
         """
-        Initialize a new instance of BaseGeometry.
-
+        Constructor for the BaseGeometry class.
         Parameters:
-        - None
-
+            - None
         Returns:
-        - None
+            - None
         """
         pass
     def area(self):
@@ -35,5 +33,5 @@ class BaseGeometry:
         Returns:
         - List of attributes and methods.
         """
-        return [attr for attr in dir(self.__class__) if attr != '__init_subclass__']
+        return [attr for attr in dir(self) if attr != '__init_subclass__']
 
