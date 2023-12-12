@@ -37,3 +37,26 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+class Rectangle(BaseGeometry):
+    """
+    Rectangle class that inherits from BaseGeometry.
+    Methods:
+        - __init__(self, width, height): Constructor for initializing instances of Rectangle.
+        Attributes:
+            - __width (int): Private attribute for the width of the rectangle.
+            - __height (int): Private attribute for the height of the rectangle.
+    """
+    def __init__(self, width, height):
+        """
+        Constructor for the Rectangle class.
+        Parameters:
+            - width (int): The width of the rectangle.
+            - height (int): The height of the rectangle.
+        Returns:
+            - None
+        """
+        super().__init__()
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
