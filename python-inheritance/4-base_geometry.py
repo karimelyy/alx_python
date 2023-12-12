@@ -1,7 +1,4 @@
 """define an empty class BaseGeometry"""
-from collections.abc import Iterable
-
-
 class BaseGeometry:
     """
     The class is a placeholder for geometry-related classes.
@@ -33,5 +30,6 @@ class BaseGeometry:
         Returns:
         - List of attributes and methods.
         """
-        return [attr for attr in dir(self) if attr != '__init_subclass__']
+        return [attr for attr in dir(self.__class__) if attr != '__init_subclass__']
+
 
