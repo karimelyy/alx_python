@@ -25,7 +25,6 @@ class BaseGeometry:
             - none
         """
         pass
-    @classmethod
     def __dir__(self):
         """
         Override __dir__ to exclude __init_subclass__ from the output.
@@ -33,4 +32,4 @@ class BaseGeometry:
         Returns:
         - List of attributes and methods.
         """
-        return [attr for attr in dir(cls) if attr != '__init_subclass__']
+        return [attr for attr in dir(type(self)) if attr != '__init_subclass__']
