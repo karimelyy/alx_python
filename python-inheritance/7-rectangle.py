@@ -4,7 +4,7 @@ Module containing the Rectangle class, which inherits from BaseGeometry.
 Classes:
     - Rectangle: A class representing a rectangle.
 """
-class Rectangle(BaseGeometry):
+class rectangle(BaseGeometry):
     """
     Rectangle class that inherits from BaseGeometry.
     Methods:
