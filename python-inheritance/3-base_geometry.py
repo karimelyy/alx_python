@@ -1,4 +1,6 @@
-"""define an empty class BaseGeometry"""
+"""
+define an empty class BaseGeometry
+"""
 class baseGeometry:
     """The class is a placeholder for geometry-related classes.
     Attributes:
