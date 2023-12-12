@@ -1,3 +1,4 @@
+"""define a reactangle class BaseGeometry"""
 class Rectangle(BaseGeometry):
     """
     Rectangle class that inherits from BaseGeometry.
