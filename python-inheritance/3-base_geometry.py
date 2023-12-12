@@ -9,5 +9,12 @@ class baseGeometry:
     - No methods are defined in this base class.
     """
     def __init__(self):
-        """This is the constructor for the BaseGeometry class."""
+        """Constructor for the BaseGeometry class.
+        
+        Parameters:
+            - None
+
+        Returns:
+            - None
+        """
         pass
