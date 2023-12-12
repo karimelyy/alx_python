@@ -25,20 +25,11 @@ class BaseGeometry:
             - none
         """
         pass
-    def area(self):
+    def __dir__(self):
         """
-        Calculate the area.
+        Override __dir__ to exclude __init_subclass__ from the output.
 
         Returns:
-        - None (not implemented in the base class).
+        - List of attributes and methods.
         """
-        pass
-
-    def perimeter(self):
-        """
-        Calculate the perimeter.
-
-        Returns:
-        - None (not implemented in the base class).
-        """
-        pass
+        return [attr for attr in dir(type(self)) if attr != '__init_subclass__']
