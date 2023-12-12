@@ -6,4 +6,18 @@ class baseGeometry:
     Methods:
         - No methods are defined in this base class.
     """
-    pass
+    def __init__(self):
+        """Constructor for BaseGeometry class"""
+        pass
+    def area(self):
+        """Calculate the area
+        returns:
+            -none (noy implemented in the base calss)
+        """
+        pass
+    def perimeter(self):
+        """Calculate the perimeter
+        returns:
+            -none (not implemented in the base class)
+        """
+        pass
