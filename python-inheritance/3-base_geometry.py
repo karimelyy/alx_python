@@ -16,3 +16,12 @@ class BaseGeometry:
             - None
         """
         pass
+    def __init_subclass__(cls):
+        """
+        Placeholder for subclasses to extebd or override
+        Args:
+            - cls: the subclass being created
+        returns:
+            - none
+        """
+        pass
