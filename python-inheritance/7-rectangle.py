@@ -61,7 +61,7 @@ class Rectangle(BaseGeometry):
         Returns:
             - None
         """
-        super().__init__()  # Call the constructor of the parent class (BaseGeometry)
+        super().__init__()
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
