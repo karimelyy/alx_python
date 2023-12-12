@@ -1,6 +1,6 @@
 """define an empty class BaseGeometry"""
 class baseGeometry:
-    """The BaseGeometry class is a placeholder for geometry-related classes.
+    """The class is a placeholder for geometry-related classes.
     Attributes:
         - No attributes are defined in this base class.
     Methods:
