@@ -16,18 +16,6 @@ class BaseGeometry:
             - None
         """
         pass
-    def __init__(self):
-        """
-        Initialize a new instance of BaseGeometry.
-
-        Parameters:
-        - None
-
-        Returns:
-        - None
-        """
-        pass
-
     def __dir__(self):
         """
         Override __dir__ to exclude __init_subclass__ from the output.
