@@ -121,7 +121,9 @@ class Square(Rectangle):
         Returns:
             - None
         """
-        super().__init__(size, size)  # Call the constructor of the parent class (Rectangle)
+        super().__init__(size, size)
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
         self.integer_validator("size", size)
         self.__size = size
 
