@@ -9,15 +9,6 @@ class BaseGeometry:
     """
     def __init__(self):
         """
-        Constructor for the BaseGeometry class.
-        Parameters:
-            - None
-        Returns:
-            - None
-        """
-        pass
-    def __init__(self):
-        """
         Initialize a new instance of BaseGeometry.
 
         Parameters:
@@ -26,6 +17,7 @@ class BaseGeometry:
         Returns:
         - None
         """
+        pass
     def area(self):
         """
         Public instance method that raises an Exception with the message"area() is not implemented"
