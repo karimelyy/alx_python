@@ -1,4 +1,7 @@
-"""Define an empty class baseGeometry"""
+"""Module: 3-base-geometry
+This module contains the definition of the BaseGeometry class
+which serves as the base class for geometry-related classes.
+"""
 class baseGeometry:
      """The BaseGeometry class is the base class for geometry-related classes.
      Attributes:
