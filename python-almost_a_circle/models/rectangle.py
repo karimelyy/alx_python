@@ -105,6 +105,6 @@ class Rectangle(Base):
 
     def __str__(self):
         """Override the __str__ method to return a formatted string"""
-        return "[Reactangle] ({}) {}/{} - {}/{}".format(
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id,  self.x, self.y, self.width, self.height
         )
