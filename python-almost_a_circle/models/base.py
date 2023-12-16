@@ -1,3 +1,7 @@
+"""
+This module contains the Base class, which serves as the base for other classes
+in the project. it manages the 'id' attribute and avoids duplicating code
+"""
 class Base:
     # Private class attribute to keep track of objects created
     __nb_objects = 0
