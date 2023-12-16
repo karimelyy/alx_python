@@ -99,9 +99,11 @@ class Rectangle(Base):
         return self.width * self.height
     
     def display(self):
-        """Print the reactangle instance using '#' characters"""
-        for _ in range(self.height):
-            print("#" * self.width)
+        """Print the reactangle instance using '#' characters and accounting for x and y"""
+        for _ in range(self.y):
+            print()
+        for _ in range (self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """Override the __str__ method to return a formatted string"""
