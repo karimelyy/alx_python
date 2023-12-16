@@ -44,6 +44,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter method for width."""
+        self.validate_positive_integer("width", value)
         self.__width = value
 
     @property
@@ -54,6 +55,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setter method for height."""
+        self.validate_positive_integer("height", value)
         self.__height = value
 
     @property
@@ -64,6 +66,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setter method for x-coordinate."""
+        self.validate_non_negative_integer("x", value)
         self.__x = value
 
     @property
@@ -74,16 +77,19 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter method for y-coordinate."""
+        self.validate_non_negative_integer("y", value)
         self.__y = value
+    
+    def validate_positive_integer(self, attribute_name, value):
+        """Validate that the given value is a positive integer."""
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(attribute_name))
+        if value <= 0:
+            raise ValueError("{} must be > 0".format(attribute_name))
 
-# Example usage and testing
-if __name__ == "__main__":
-    # Create instances of Rectangle and print their IDs
-    r1 = Rectangle(10, 2)
-    print(r1.id)
-
-    r2 = Rectangle(2, 10)
-    print(r2.id)
-
-    r3 = Rectangle(10, 2, 0, 0, 12)
-    print(r3.id)
+    def validate_non_negative_integer(self, attribute_name, value):
+        """Validate that the given value is a non-negative integer."""
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(attribute_name))
+        if value < 0:
+            raise ValueError("{} must be >= 0".format(attribute_name))
