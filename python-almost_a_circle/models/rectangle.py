@@ -1,6 +1,7 @@
 """
 This module contains the Rectangle class, which inherits from the Base class.
 """
+
 from models.base import Base
 
 class Rectangle(Base):
@@ -30,7 +31,7 @@ class Rectangle(Base):
         # Call the super class with id
         super().__init__(id)
         
-        # Assign each argument to the right attribute
+        # Assign each argument to the right attribute with validation
         self.width = width
         self.height = height
         self.x = x
@@ -79,7 +80,7 @@ class Rectangle(Base):
         """Setter method for y-coordinate."""
         self.validate_non_negative_integer("y", value)
         self.__y = value
-    
+
     def validate_positive_integer(self, attribute_name, value):
         """Validate that the given value is a positive integer."""
         if not isinstance(value, int):
@@ -93,24 +94,24 @@ class Rectangle(Base):
             raise TypeError("{} must be an integer".format(attribute_name))
         if value < 0:
             raise ValueError("{} must be >= 0".format(attribute_name))
-        
+
     def area(self):
-        """Calculate and return the area of the reactangle"""
+        """Calculate and return the area of the Rectangle."""
         return self.width * self.height
-    
+
     def display(self):
-        """Print the reactangle instance using '#' characters and accounting for x and y"""
+        """Print the Rectangle instance using '#' characters and accounting for x and y."""
         for _ in range(self.y):
             print()
-        for _ in range (self.height):
+        for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        """Override the __str__ method to return a formatted string"""
+        """Override the __str__ method to return a formatted string."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id,  self.x, self.y, self.width, self.height
+            self.id, self.x, self.y, self.width, self.height
         )
-    
+
     def update(self, *args):
         """
         Assign arguments to attributes in the order:
@@ -122,7 +123,7 @@ class Rectangle(Base):
         """
         if args:
             attributes = ["id", "width", "height", "x", "y"]
-            for 1, arg in enumerate(args):
+            for i, arg in enumerate(args):
                 if i == 0:
                     setattr(self, attributes[i], arg)
                 else:
