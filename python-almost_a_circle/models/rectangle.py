@@ -120,6 +120,8 @@ class Rectangle(Base):
             3rd argument - height attribute
             4th argument - x attribute
             5th argument - y attribute
+
+        Alternatively, use key-worded arguments (**kwargs) to assign values to attributes.
         """
         if args:
             attributes = ["id", "width", "height", "x", "y"]
