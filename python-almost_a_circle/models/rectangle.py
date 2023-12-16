@@ -1,3 +1,6 @@
+"""
+This module contains the Rectangle class, which inherits from the Base class.
+"""
 from models.base import Base
 
 class Rectangle(Base):
