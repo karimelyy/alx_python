@@ -3,6 +3,13 @@ This module contains the Base class, which serves as the base for other classes
 in the project. it manages the 'id' attribute and avoids duplicating code
 """
 class Base:
+    """
+    Base class for managing the 'id' attribute in the project.
+
+    Attributes:
+        __nb_objects (int): A private class attribute to keep track of objects created.
+        id (int): The public instance attribute representing the ID of the instance.
+    """
     # Private class attribute to keep track of objects created
     __nb_objects = 0
 
