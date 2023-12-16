@@ -112,7 +112,7 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Assign arguments to attributes in the order:
             1st argument - id attribute
@@ -128,3 +128,6 @@ class Rectangle(Base):
                     setattr(self, attributes[i], arg)
                 else:
                     setattr(self, attributes[i], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
