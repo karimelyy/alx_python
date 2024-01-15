@@ -31,8 +31,11 @@ if __name__ == "__main__":
     # Fetch all rows
     rows = cursor.fetchall()
 
+    # Sort the results by name in a case-sensitive manner
+    sorted_rows = sorted(rows, key=lambda x: (x[1].lower(), x[0]))
+
     # Display the results
-    for row in sorted(rows, key=lambda x: x[0]):
+    for row in sorted_rows:
         print(row)
 
     # Close cursor and database connection
