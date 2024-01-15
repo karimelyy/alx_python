@@ -24,8 +24,8 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    # Execute the query to retrieve states starting with 'N'
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    # Execute the case-insensitive query to retrieve states starting with 'N'
+    query = "SELECT * FROM states WHERE UPPER(name) LIKE 'N%' ORDER BY id ASC"
     cursor.execute(query)
 
     # Fetch all rows
