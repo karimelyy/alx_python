@@ -32,7 +32,7 @@ if __name__ == "__main__":
     rows = cursor.fetchall()
 
     # Display the results
-    for row in rows:
+    for row in sorted(rows, key=lambda x: x[0]):
         print(row)
 
     # Close cursor and database connection
