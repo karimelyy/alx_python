@@ -25,7 +25,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the case-insensitive query to retrieve states matching the provided name
-    query = "SELECT * FROM states WHERE UPPER(name) = UPPER(%s) ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name COLLATE utf8_general_ci = %s ORDER BY id ASC"
     cursor.execute(query, (state_name,))
 
     # Fetch all rows
