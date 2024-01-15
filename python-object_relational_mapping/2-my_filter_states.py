@@ -24,15 +24,15 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    # Execute the case-insensitive query to retrieve states matching the provided name
-    query = "SELECT * FROM states WHERE name COLLATE utf8_general_ci = %s ORDER BY id ASC"
-    cursor.execute(query, (state_name,))
-
     # Fetch all rows
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
     rows = cursor.fetchall()
 
-    # Display the results
-    for row in rows:
+    # Filter rows by case-insensitive comparison in Python
+    filtered_rows = [(id, name) for id, name in rows if name.lower() == state_name.lower()]
+
+    # Display the filtered results
+    for row in filtered_rows:
         print(row)
 
     # Close cursor and database connection
