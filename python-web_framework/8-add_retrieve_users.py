@@ -43,8 +43,8 @@ def add_user():
     if request.method == 'POST':
         # Handle POST request
         try:
-            name = request.form['name']
-            email = request.form['email']
+            name = request.form.get('name')  # Corrected line to retrieve form data
+            email = request.form.get('email')  # Corrected line to retrieve form data
 
             # Attempt to insert the new user into the User table
             new_user = User(name=name, email=email)
