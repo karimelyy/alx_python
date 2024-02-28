@@ -1,3 +1,10 @@
+"""
+This script fetches the TODO list of a specific employee from the JSONPlaceholder API
+and exports the data to a JSON file.
+
+Usage: python script_name.py <employee_id>
+"""
+
 import json
 import requests
 import sys
