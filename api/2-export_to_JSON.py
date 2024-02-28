@@ -3,6 +3,16 @@ import requests
 import sys
 
 def export_employee_tasks(employee_id):
+    """
+    Fetches the TODO list of a specific employee from the JSONPlaceholder API
+    and exports the data to a JSON file.
+
+    Args:
+        employee_id (int): The ID of the employee whose tasks are to be exported.
+
+    Returns:
+        None
+    """
     # Fetching employee details
     employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     response = requests.get(employee_url)
