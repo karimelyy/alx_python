@@ -15,10 +15,6 @@ def get_employee_info(employee_id):
     todos_response = requests.get(todos_url)
     todos_data = todos_response.json()
 
-    # Counting completed tasks
-    completed_tasks = [task for task in todos_data if task['completed']]
-    num_completed_tasks = len(completed_tasks)
-
     # Writing data to CSV file
     with open(f"{user_id}.csv", mode='w', newline='') as file:
         writer = csv.writer(file)
