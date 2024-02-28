@@ -15,6 +15,10 @@ def get_employee_info(employee_id):
     todos_response = requests.get(todos_url)
     todos_data = todos_response.json()
 
+    # Counting completed tasks
+    completed_tasks = [task for task in todos_data if task['completed']]
+    num_completed_tasks = len(completed_tasks)
+
     # Writing data to CSV file
     with open(f"{user_id}.csv", mode='w', newline='') as file:
         writer = csv.writer(file)
@@ -22,7 +26,7 @@ def get_employee_info(employee_id):
         for task in todos_data:
             writer.writerow([user_id, username, str(task['completed']), task['title']])
 
-    print(f"Data exported to {user_id}.csv")
+    print(f"Number of tasks in CSV: {len(todos_data)}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
