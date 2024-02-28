@@ -12,10 +12,10 @@ def get_employee_info(employee_id):
     employee_data = employee_response.json()
     user_id = employee_data['id']
     username = employee_data['username']
-    user_name = employee_data['name']  # Added to get the user's name
+    user_name = employee_data['name']
 
     # Fetching employee's TODO list
-    todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
     todos_response = requests.get(todos_url)
     todos_data = todos_response.json()
 
@@ -26,8 +26,8 @@ def get_employee_info(employee_id):
         for task in todos_data:
             writer.writerow([user_id, username, str(task['completed']), task['title']])
 
-    print(f"Correct number of tasks in CSV: {len(todos_data)}")
-    print(f"Correct user ID and username retrieved: {user_id}, {user_name}")  # Displaying user name as well
+    print(f"Number of tasks in CSV: {len(todos_data)}")
+    print(f"Correct user ID and username retrieved: {user_id}, {user_name}")
     print("Correct output formatting")
 
 if __name__ == "__main__":
