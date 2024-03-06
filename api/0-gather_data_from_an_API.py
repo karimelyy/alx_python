@@ -1,31 +1,29 @@
 import requests
 import sys
 
-def get_employee_info(employee_id):
-    # Fetching employee details
-    employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    employee_response = requests.get(employee_url)
-    employee_data = employee_response.json()
-    employee_name = employee_data['name']
+# Get the employee ID from command line arguments
+employee_id = sys.argv[1]
 
-    # Fetching employee's TODO list
-    todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
-    todos_response = requests.get(todos_url)
-    todos_data = todos_response.json()
+# Make a GET request to retrieve employee information
+user_request = requests.get('https://jsonplaceholder.typicode.com/users/'+employee_id)
+todos_request = requests.get('https://jsonplaceholder.typicode.com/users/'+employee_id+'/todos')
 
-    # Counting completed tasks
-    completed_tasks = [task for task in todos_data if task['completed']]
-    num_completed_tasks = len(completed_tasks)
-    total_tasks = len(todos_data)
+# Parse the JSON response
+user_data = user_request.json()
+todos_data = todos_request.json()
 
-    # Displaying employee TODO list progress
-    print(f"Employee {employee_name} is done with tasks({num_completed_tasks}/{total_tasks}):")
-    for task in completed_tasks:
-        print(f"\t{task['title']}")
+# Initialize a counter for completed tasks
+tasks_completed = 0
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script_name.py <employee_id>")
-        sys.exit(1)
-    employee_id = int(sys.argv[1])
-    get_employee_info(employee_id)
+# Iterate through the tasks to count completed ones
+for todo in todos_data:
+    if todo.get('completed'):
+        tasks_completed += 1
+
+# Print the employee's name and the number of completed tasks
+print ('Employee "{}" has completed tasks ({}/{}) :'.format(user_data.get('name'), tasks_completed, len(todos_data)))
+
+# Print the titles of completed tasks
+for task in todos_data:
+    if task.get('completed'):
+        print('\t - ' + task.get('title'))
