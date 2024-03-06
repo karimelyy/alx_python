@@ -5,8 +5,8 @@ import sys
 id = sys.argv[1]
 
 # Make a GET request to retrieve employee information
-request_user = requests.get('https://jsonplaceholder.typicode.com/users/'+employee_id)
-request_todos = requests.get('https://jsonplaceholder.typicode.com/users/'+employee_id+'/todos')
+request_user = requests.get('https://jsonplaceholder.typicode.com/users/'+id)
+request_todos = requests.get('https://jsonplaceholder.typicode.com/users/'+id+'/todos')
 
 # Parse the JSON response
 data_user = request_user.json()
