@@ -24,6 +24,6 @@ for i in data_todos:
 print ('Employee "{}" has completed tasks ({}/{}) :'.format(data_user.get('name'), completed, len(data_todos)))
 
 # Print the titles of completed tasks
-for task in data_todos:
-    if task.get('completed'):
-        print('\t - ' + task.get('title'))
+for item in data_todos:
+    if item.get('completed'):
+        print('\t - ' + item.get('title'))
